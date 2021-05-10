@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/C__.dir/dynamic_mem.cpp.o -o C__ 
