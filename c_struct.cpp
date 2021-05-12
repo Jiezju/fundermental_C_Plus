@@ -16,12 +16,21 @@ void vector_init(Vector& v, const int s)
 {
     v.sz = s;
     v.elem = new double[s];
+
+    for (unsigned int i=0; i<s; ++i)
+    {
+        v.elem[i] = i;
+    }
 }
 
 void vector_init(Vector* v, const int s)
 {
     v->sz = s;
     v->elem = new double [s];
+    for (unsigned int i=0; i<s; ++i)
+    {
+        v->elem[i] = i;
+    }
 }
 
 double read_and_sum(const Vector& v)
