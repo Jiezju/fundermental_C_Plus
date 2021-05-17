@@ -12,8 +12,8 @@ public:
     // 默认构造函数
     custom_Vector():elem{new double(0)},sz{1}{}
 
-    // 构造函数
-    custom_Vector(int s): elem{new double [s]}, sz{s} {
+    // 构造函数 explicit
+    explicit custom_Vector(int s): elem{new double [s]}, sz{s} {
         for (unsigned int i = 0; i< s;++i)
         {
             elem[i] = i;
@@ -32,11 +32,17 @@ public:
     // 重载运算符
     double& operator[] (int index) const;
 
+    // copy constructor
+    custom_Vector(const custom_Vector& vec);
+
+    // equal
+    custom_Vector& operator=(const custom_Vector& vec);
+
     // 访问私有属性
-    int size() const;
+    unsigned int size() const;
 
 private:
-    int sz;
+    unsigned int sz;
     double* elem;
 
 };
