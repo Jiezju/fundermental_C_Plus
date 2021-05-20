@@ -47,6 +47,13 @@ custom_Vector::custom_Vector(const custom_Vector& vec): elem{new double [vec.siz
     }
 }
 
+custom_Vector::custom_Vector(custom_Vector&& v): elem{v.elem}, sz{v.sz}
+{
+    v.~custom_Vector();
+    v.elem = nullptr;
+    v.sz = 0;
+}
+
 custom_Vector & custom_Vector::operator=(const custom_Vector &vec)
 {
     double* p = new double [vec.sz];
@@ -62,3 +69,11 @@ custom_Vector & custom_Vector::operator=(const custom_Vector &vec)
     return *this;
 }
 
+custom_Vector& custom_Vector::operator=(custom_Vector&& v)
+{
+    elem = std::move(v.elem);
+    sz = v.sz;
+    v.elem = nullptr;
+    v.sz = 0;
+    return *this;
+}

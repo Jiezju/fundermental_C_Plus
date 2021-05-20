@@ -34,11 +34,9 @@ int main()
     }
 
     custom_Vector veq = v1;
-    for (unsigned int i = 0; i< veq.size(); ++i)
-    {
-        std::cout<<veq[i]<<std::endl;
+    for (unsigned int i = 0; i< veq.size(); ++i) {
+        std::cout << veq[i] << std::endl;
     }
-
 
     return 0;
 }

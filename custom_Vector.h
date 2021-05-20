@@ -38,6 +38,11 @@ public:
     // equal
     custom_Vector& operator=(const custom_Vector& vec);
 
+    //  move constructor
+    custom_Vector(custom_Vector&& v);
+
+    custom_Vector& operator=(custom_Vector&& v);
+
     // 访问私有属性
     unsigned int size() const;
 
