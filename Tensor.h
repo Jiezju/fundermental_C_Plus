@@ -25,6 +25,11 @@ public:
 
     double data(int i, int j) const;
 
+    //    Tensor& operator=(const Tensor& t);
+    Tensor& operator=(Tensor&& t);
+
+    friend double* print_ptr(Tensor t);
+
 
     ~Tensor()
     {

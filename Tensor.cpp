@@ -71,6 +71,32 @@ double Tensor::data(int i, int j) const
     }
 }
 
+Tensor & Tensor::operator=(Tensor&& t)
+{
+    psize = t.psize;
+    pshape.clear();
+    for (auto i : t.pshape)
+    {
+        pshape.push_back(i);
+    }
+    double* p = new double [psize];
+    for (unsigned int i = 0; i<psize; ++i)
+    {
+        p[i] = t[i];
+    }
+    delete [] pelem;
+    pelem = p;
+
+    t.~Tensor();
+
+    return *this;
+}
+
+double* print_ptr(Tensor t)
+{
+    return t.pelem;
+}
+
 
 
 
