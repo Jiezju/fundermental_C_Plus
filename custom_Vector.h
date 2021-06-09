@@ -39,7 +39,7 @@ public:
     custom_Vector& operator=(const custom_Vector& vec);
 
     //  move constructor
-    custom_Vector(custom_Vector&& v);
+    custom_Vector(custom_Vector&& v) noexcept ;
 
     custom_Vector& operator=(custom_Vector&& v);
 

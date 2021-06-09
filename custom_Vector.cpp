@@ -47,7 +47,7 @@ custom_Vector::custom_Vector(const custom_Vector& vec): elem{new double [vec.siz
     }
 }
 
-custom_Vector::custom_Vector(custom_Vector&& v): elem{v.elem}, sz{v.sz}
+custom_Vector::custom_Vector(custom_Vector&& v) noexcept: elem{v.elem}, sz{v.sz}
 {
     v.~custom_Vector();
     v.elem = nullptr;
