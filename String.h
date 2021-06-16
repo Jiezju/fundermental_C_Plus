@@ -6,7 +6,7 @@
 #define C___STRING_H
 #include <iostream>
 #include <string.h>
-
+using namespace std;
 
 class String {
 public:
